@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import L from 'leaflet'
 import 'leaflet/dist/leaflet.css'
-import { Campus } from '../types'
+import type { Campus } from '../types'
 
 interface CampusMapProps {
   campuses: Campus[]

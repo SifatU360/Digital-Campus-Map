@@ -1,5 +1,6 @@
-import { createContext, useContext, useState, ReactNode } from 'react'
-import { User, LoginCredentials, RegisterCredentials } from '../types'
+import { createContext, useContext, useState } from 'react'
+import type { ReactNode } from 'react'
+import type { User, LoginCredentials, RegisterCredentials } from '../types'
 
 interface AuthContextType {
   user: User | null
