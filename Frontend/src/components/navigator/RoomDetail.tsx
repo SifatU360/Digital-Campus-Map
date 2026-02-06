@@ -102,7 +102,7 @@ export function RoomDetail({ room, onClose }: RoomDetailProps) {
               Facilities
             </h3>
             <div className="space-y-2">
-              {room.facilities.map((facility, index) => (
+              {room.facilities?.map((facility: { name: string; count?: number }, index: number) => (
                 <motion.div
                   key={index}
                   initial={{ opacity: 0, x: -10 }}
