@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Layers, ChevronRight } from 'lucide-react'
-import type { Floor } from '../types'
+import type { Floor } from '@/types'
 
 interface FloorNavigatorProps {
   floors: Floor[]

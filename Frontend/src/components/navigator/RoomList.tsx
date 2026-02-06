@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Grid3x3 as Door, Users, Zap } from 'lucide-react'
-import type { Room } from '../types'
+import type { Room } from '@/types'
 import { getRoomTypeColor, getRoomTypeIcon } from '../../utils/helpers'
 
 interface RoomListProps {

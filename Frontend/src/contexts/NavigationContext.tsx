@@ -1,6 +1,6 @@
-import { createContext, useContext, useState } from 'react'
+import { createContext, useState } from 'react'
 import type { ReactNode } from 'react'
-import type { NavigationState, Campus, Building, Floor, Room } from '../types'
+import type { NavigationState, Campus, Building, Floor, Room } from '@/types'
 
 interface NavigationContextType {
   state: NavigationState
@@ -11,13 +11,13 @@ interface NavigationContextType {
   reset: () => void
 }
 
-const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
+export const NavigationContext = createContext<NavigationContextType | undefined>(undefined)
 
 export function NavigationProvider({ children }: { children: ReactNode }) {
   const [state, setState] = useState<NavigationState>({})
 
   const selectCampus = (campus: Campus) => {
-    setState(prev => ({
+    setState((prev: NavigationState) => ({
       ...prev,
       selectedCampus: campus,
       selectedBuilding: undefined,
@@ -27,7 +27,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   }
 
   const selectBuilding = (building: Building) => {
-    setState(prev => ({
+    setState((prev: NavigationState) => ({
       ...prev,
       selectedBuilding: building,
       selectedFloor: undefined,
@@ -36,7 +36,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   }
 
   const selectFloor = (floor: Floor) => {
-    setState(prev => ({
+    setState((prev: NavigationState) => ({
       ...prev,
       selectedFloor: floor,
       selectedRoom: undefined,
@@ -44,7 +44,7 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
   }
 
   const selectRoom = (room: Room) => {
-    setState(prev => ({
+    setState((prev: NavigationState) => ({
       ...prev,
       selectedRoom: room,
     }))
@@ -59,12 +59,4 @@ export function NavigationProvider({ children }: { children: ReactNode }) {
       {children}
     </NavigationContext.Provider>
   )
-}
-
-export function useNavigation() {
-  const context = useContext(NavigationContext)
-  if (context === undefined) {
-    throw new Error('useNavigation must be used within NavigationProvider')
-  }
-  return context
 }

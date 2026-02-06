@@ -1,6 +1,4 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import "tailwindcss";
 
 * {
   margin: 0;
@@ -41,6 +39,7 @@ html, body, #root {
   border-radius: 10px;
 }
 
+::-webkit-scrollbar-thumb {
   @apply bg-gray-400 rounded-full hover:bg-gray-500;
   border-radius: 10px;
 }

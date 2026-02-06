@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '@/hooks/useAuth'
 import { AuthLayout } from '../layouts/AuthLayout'
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react'
 
@@ -37,7 +37,7 @@ export function LoginPage() {
     try {
       await login(formData)
       navigate('/')
-    } catch (err) {
+    } catch {
       setError('Login failed. Please try again.')
     }
   }

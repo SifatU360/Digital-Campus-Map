@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { Menu, LogOut, MapPin } from 'lucide-react'
 import { useState } from 'react'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '@/hooks/useAuth'
 
 export function Header() {
   const { user, logout } = useAuth()

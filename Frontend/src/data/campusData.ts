@@ -1,4 +1,4 @@
-import type { Campus, Building, Floor, Room, Facility } from '../types'
+import type { Campus, Facility } from '../types'
 
 export const mockCampuses: Campus[] = [
   {

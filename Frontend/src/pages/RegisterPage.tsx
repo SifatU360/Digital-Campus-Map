@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useAuth } from '../contexts/AuthContext'
+import { useAuth } from '@/hooks/useAuth'
 import { AuthLayout } from '../layouts/AuthLayout'
 import { Eye, EyeOff, Mail, Lock, User } from 'lucide-react'
 
@@ -50,7 +50,7 @@ export function RegisterPage() {
     try {
       await register(formData)
       navigate('/')
-    } catch (err) {
+    } catch {
       setError('Registration failed. Please try again.')
     }
   }

@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { X, MapPin, Users, Zap, Tag } from 'lucide-react'
-import type { Room } from '../types'
+import type { Room } from '@/types'
 import { getRoomTypeIcon } from '../../utils/helpers'
 
 interface RoomDetailProps {

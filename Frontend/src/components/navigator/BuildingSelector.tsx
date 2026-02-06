@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import { Building as BuildingIcon, ChevronRight } from 'lucide-react'
-import type { Building } from '../types'
+import type { Building } from '@/types'
 
 interface BuildingSelectorProps {
   buildings: Building[]
